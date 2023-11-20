@@ -14,6 +14,8 @@
 		B45A89B52B0ADCBB006FC2F1 /* AuthenticationSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45A89B42B0ADCBB006FC2F1 /* AuthenticationSwiftUITests.swift */; };
 		B45A89BF2B0ADCBB006FC2F1 /* AuthenticationSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45A89BE2B0ADCBB006FC2F1 /* AuthenticationSwiftUIUITests.swift */; };
 		B45A89C12B0ADCBB006FC2F1 /* AuthenticationSwiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45A89C02B0ADCBB006FC2F1 /* AuthenticationSwiftUIUITestsLaunchTests.swift */; };
+		B4CFC66E2B0B1F1800C56712 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CFC66D2B0B1F1800C56712 /* SplashView.swift */; };
+		B4CFC6712B0B207900C56712 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CFC6702B0B207900C56712 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		B45A89BA2B0ADCBB006FC2F1 /* AuthenticationSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AuthenticationSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B45A89BE2B0ADCBB006FC2F1 /* AuthenticationSwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationSwiftUIUITests.swift; sourceTree = "<group>"; };
 		B45A89C02B0ADCBB006FC2F1 /* AuthenticationSwiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationSwiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B4CFC66D2B0B1F1800C56712 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		B4CFC6702B0B207900C56712 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,10 @@
 		B45A89A22B0ADCB8006FC2F1 /* AuthenticationSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				B4CFC6742B0B210500C56712 /* Details */,
+				B4CFC6732B0B20FA00C56712 /* DashBoard */,
+				B4CFC6722B0B20DE00C56712 /* Splash */,
+				B4CFC66F2B0B206000C56712 /* Login */,
 				B45A89A32B0ADCB8006FC2F1 /* AuthenticationSwiftUIApp.swift */,
 				B45A89A52B0ADCB8006FC2F1 /* ContentView.swift */,
 				B45A89A72B0ADCBB006FC2F1 /* Assets.xcassets */,
@@ -125,6 +133,36 @@
 				B45A89C02B0ADCBB006FC2F1 /* AuthenticationSwiftUIUITestsLaunchTests.swift */,
 			);
 			path = AuthenticationSwiftUIUITests;
+			sourceTree = "<group>";
+		};
+		B4CFC66F2B0B206000C56712 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				B4CFC6702B0B207900C56712 /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		B4CFC6722B0B20DE00C56712 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				B4CFC66D2B0B1F1800C56712 /* SplashView.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		B4CFC6732B0B20FA00C56712 /* DashBoard */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DashBoard;
+			sourceTree = "<group>";
+		};
+		B4CFC6742B0B210500C56712 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +297,8 @@
 			files = (
 				B45A89A62B0ADCB8006FC2F1 /* ContentView.swift in Sources */,
 				B45A89A42B0ADCB8006FC2F1 /* AuthenticationSwiftUIApp.swift in Sources */,
+				B4CFC6712B0B207900C56712 /* LoginView.swift in Sources */,
+				B4CFC66E2B0B1F1800C56712 /* SplashView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
