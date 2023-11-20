@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct LoginUser: Codable{
+struct LoginUser: Encodable{
     let userName:String
     let password:String
     

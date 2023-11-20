@@ -1,8 +1,8 @@
 //
 //  Log.swift
-//  Scotiabank
+//  AuthenticationSwiftUI
 //
-//  Created by Sajjad Sarkoobi on 2/4/22.
+//  Created by Muhammad Mamun on 19/11/23.
 //
 
 import Foundation
