@@ -21,3 +21,13 @@ enum NetworkRequestError: LocalizedError, Equatable {
     case timeOut
     case unknownError
 }
+
+enum NetworkError: Error {
+    case invalidURL
+    case invalidResponse
+    case requestFailed
+    case encodeFailed
+    case decodeFailed
+    case timeOut
+    case unknownError
+}

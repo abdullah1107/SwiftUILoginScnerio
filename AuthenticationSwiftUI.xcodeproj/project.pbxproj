@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B40857F02B16722E008A31D4 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40857EF2B16722E008A31D4 /* LoginViewModel.swift */; };
+		B440DD852B12FD9200692D7D /* LoginAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B440DD842B12FD9200692D7D /* LoginAPI.swift */; };
+		B440DD872B12FFE700692D7D /* APIRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B440DD862B12FFE700692D7D /* APIRequestProtocol.swift */; };
 		B45A89A42B0ADCB8006FC2F1 /* AuthenticationSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45A89A32B0ADCB8006FC2F1 /* AuthenticationSwiftUIApp.swift */; };
 		B45A89A62B0ADCB8006FC2F1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45A89A52B0ADCB8006FC2F1 /* ContentView.swift */; };
 		B45A89A82B0ADCBB006FC2F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B45A89A72B0ADCBB006FC2F1 /* Assets.xcassets */; };
@@ -43,6 +46,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B40857EF2B16722E008A31D4 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		B440DD842B12FD9200692D7D /* LoginAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAPI.swift; sourceTree = "<group>"; };
+		B440DD862B12FFE700692D7D /* APIRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestProtocol.swift; sourceTree = "<group>"; };
 		B45A89A02B0ADCB8006FC2F1 /* AuthenticationSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuthenticationSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B45A89A32B0ADCB8006FC2F1 /* AuthenticationSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationSwiftUIApp.swift; sourceTree = "<group>"; };
 		B45A89A52B0ADCB8006FC2F1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -89,6 +95,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B40857EE2B167214008A31D4 /* LoginViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B40857EF2B16722E008A31D4 /* LoginViewModel.swift */,
+			);
+			path = LoginViewModel;
+			sourceTree = "<group>";
+		};
 		B45A89972B0ADCB8006FC2F1 = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +168,7 @@
 		B4CFC66F2B0B206000C56712 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				B40857EE2B167214008A31D4 /* LoginViewModel */,
 				B4CFC6852B0B35EF00C56712 /* LoginView */,
 				B4CFC6842B0B35DE00C56712 /* LoginService */,
 				B4CFC6752B0B222700C56712 /* LoginModel */,
@@ -198,6 +213,7 @@
 				B4CFC67B2B0B277A00C56712 /* NetworkRequestError.swift */,
 				B4CFC67D2B0B2AB300C56712 /* APIConstants.swift */,
 				B4CFC67F2B0B2B4F00C56712 /* APIClient.swift */,
+				B440DD862B12FFE700692D7D /* APIRequestProtocol.swift */,
 			);
 			path = NetworkService;
 			sourceTree = "<group>";
@@ -214,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				B4CFC6862B0B361000C56712 /* LoginService.swift */,
+				B440DD842B12FD9200692D7D /* LoginAPI.swift */,
 			);
 			path = LoginService;
 			sourceTree = "<group>";
@@ -358,8 +375,11 @@
 			files = (
 				B45A89A62B0ADCB8006FC2F1 /* ContentView.swift in Sources */,
 				B4CFC6772B0B222700C56712 /* LoginUser.swift in Sources */,
+				B440DD872B12FFE700692D7D /* APIRequestProtocol.swift in Sources */,
 				B4CFC6832B0B2BEF00C56712 /* Log.swift in Sources */,
 				B4CFC67A2B0B273D00C56712 /* HTTPMethod.swift in Sources */,
+				B440DD852B12FD9200692D7D /* LoginAPI.swift in Sources */,
+				B40857F02B16722E008A31D4 /* LoginViewModel.swift in Sources */,
 				B45A89A42B0ADCB8006FC2F1 /* AuthenticationSwiftUIApp.swift in Sources */,
 				B4CFC67E2B0B2AB300C56712 /* APIConstants.swift in Sources */,
 				B4CFC6872B0B361000C56712 /* LoginService.swift in Sources */,
@@ -455,7 +475,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -512,7 +532,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -538,6 +558,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -567,6 +588,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

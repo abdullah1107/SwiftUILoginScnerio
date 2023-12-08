@@ -8,28 +8,7 @@
 import Foundation
 import Combine
 
-/*
- This class based on this github project
- https://gist.github.com/afterxleep/29c9af650deadf779e15bb00a8643ee6
- https://danielbernal.co/writing-a-networking-library-with-combine-codable-and-swift-5/
- Created by: Daniel Bernal
- It changed to be more robust and useful.
- APIRouter and APIParametes class aded
- It also Log all networks request and errors in console
- */
 
-
-// Extending Encodable to Serialize a Type into a Dictionary
-extension Encodable {
-    var asDictionary: [String: Any] {
-        guard let data = try? JSONEncoder().encode(self) else { return [:] }
-
-        guard let dictionary = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any] else {
-            return [:]
-        }
-        return dictionary
-    }
-}
 
 // Our Request Protocol
 protocol Request {

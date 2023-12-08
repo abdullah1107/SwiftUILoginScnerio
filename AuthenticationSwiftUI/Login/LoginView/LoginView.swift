@@ -4,30 +4,32 @@
 //
 //  Created by Muhammad Mamun on 19/11/23.
 //
-
+import Foundation
 import SwiftUI
 
 struct LoginView: View {
-    
-    @State private var username:String = ""
-    @State private var password:String = ""
-    
+    @StateObject private var loginViewModel: LoginViewModel = LoginViewModel()
     var body: some View {
-        
         ZStack {
             VStack {
                 LoginLabelText()
                 UserImage()
-                UsernameTextField(username: $username)
-                PasswordSecureField(password: $password)
+                UsernameTextField(username: $loginViewModel.userName)
+                PasswordSecureField(password: $loginViewModel.password)
                 
                 Button(action: {
-                    // loginButtonAction
-                    print($username.wrappedValue)
+                  _ = loginViewModel.creareNewUserStatus(userName: loginViewModel.userName, password: loginViewModel.password)
                 })
                 {
-                    LoginButtonContent()
-                    // loginButtonDesign
+                    LoginButtonContent(loginViewModel: loginViewModel)
+                }
+                
+                .onAppear{
+                    if loginViewModel.formIsValid{
+                        debugPrint("Valid Form")
+                    }else{
+                        debugPrint("Form is not valid")
+                    }
                 }
             }.padding()
             
@@ -40,11 +42,6 @@ struct LoginView: View {
 #Preview {
     LoginView()
 }
-
-
-
-
-
 
 
 struct LoginLabelText: View {
@@ -70,15 +67,23 @@ struct UserImage: View {
 }
 
 struct LoginButtonContent: View {
+    @ObservedObject var loginViewModel: LoginViewModel
+    
     var body: some View {
         Text("LOGIN")
             .font(.headline)
             .foregroundColor(.white)
             .padding()
             .frame(width: 250, height: 55)
-            .background(Color.green)
             .cornerRadius(35.0)
+            .background(Color.green)
+            .opacity(buttonOpacity)
+            .disabled(!loginViewModel.formIsValid)
     }
+    
+    var buttonOpacity: Double {
+        return loginViewModel.formIsValid ? 1 : 0.5
+     }
 }
 
 struct UsernameTextField: View {

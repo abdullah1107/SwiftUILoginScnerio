@@ -25,3 +25,7 @@ enum ContentType: String {
     case json = "application/json"
     case xwwwformurlencoded = "application/x-www-form-urlencoded"
 }
+
+protocol DictionaryConvertor: Codable {}
+
+
