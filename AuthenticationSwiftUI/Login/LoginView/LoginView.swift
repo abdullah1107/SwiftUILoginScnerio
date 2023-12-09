@@ -3,62 +3,55 @@
 //  AuthenticationSwiftUI
 //
 //  Created by Muhammad Mamun on 19/11/23.
-//
+//    userName: "kminchelle",
+//    password: "0lelplR"
+
 import Foundation
 import SwiftUI
 
 struct LoginView: View {
-    @StateObject private var loginViewModel: LoginViewModel = LoginViewModel()
-    @State private var userName = ""
-    @State private var password = ""
-//    let getResult:Bool = loginViewModel
-//        .creareNewUserStatus(userName: "kminchelle",
-//                             password: "0lelplR")
+    
     @Binding var isLoggedIn: Bool
+    @StateObject private var loginViewModel: LoginViewModel = LoginViewModel()
+    @State private var isLoading = false
+    
     var body: some View {
         ZStack {
             VStack {
                 LoginLabelText()
+                    .accessibility(identifier: "login")
                 UserImage()
-                UsernameTextField(username: $userName)
-                PasswordSecureField(password: $password)
+                    .accessibility(identifier: "loginIcon")
+                UsernameTextField(username: $loginViewModel.userName)
+                    .accessibility(identifier: "usernameField")
+                PasswordSecureField(password: $loginViewModel.password)
+                    .accessibility(identifier: "passwordField")
                 
-//                Button(action: {
-//                    //print("dsagfa", $userName.wrappedValue)
-//                    let result:Bool = loginViewModel.creareNewUserStatus(userName: $userName.wrappedValue, password: $password.wrappedValue)
-//                    isLoggedIn = result
-//                    print(result,isLoggedIn)
-//                })
-//                {
-//                    LoginButtonContent(loginViewModel: loginViewModel)
-//                }
-                
-                Button("Login") {
-                    loginViewModel.creareNewUserStatus(username: $userName.wrappedValue, password: $password.wrappedValue){ result in
-                        
+                Button(action: {
+                    isLoading = true
+                    loginViewModel.creareNewUserStatus(username: loginViewModel.userName, password: loginViewModel.password){ result in
                         switch result {
                         case .success(let success):
-                            isLoggedIn = true
-                            print(success)
+                            isLoggedIn = success
                             
-                        case .failure(let failure):
+                        case .failure:
                             isLoggedIn = false
-                            print(failure.localizedDescription)
+                            print(LoginError.networkError)
                         }
-                        
+                        isLoading = false
+                    }
+                })
+                {
+                    if isLoading {
+                        ProgressView("Loading...")
+                    } else {
+                        LoginButtonContent(loginViewModel: loginViewModel)
+                            .accessibility(identifier: "loginButton")
                     }
                 }
                 
-                .onAppear{
-                    if loginViewModel.formIsValid{
-                        debugPrint("Valid Form")
-                    }else{
-                        debugPrint("Form is not valid")
-                    }
-                }
+                
             }.padding()
-            
-            
         }
     }
 }
@@ -102,8 +95,8 @@ struct LoginButtonContent: View {
             .frame(width: 250, height: 55)
             .cornerRadius(35.0)
             .background(Color.green)
-            //.opacity(buttonOpacity)
-            //.disabled(!loginViewModel.formIsValid)
+            .opacity(buttonOpacity)
+            .disabled(!loginViewModel.formIsValid)
     }
     
     var buttonOpacity: Double {

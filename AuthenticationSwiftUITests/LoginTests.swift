@@ -28,38 +28,40 @@ final class LoginTests: XCTestCase {
     
     func testUserNameNotValid(){
         loginViewModel.userName = "test"
-        let getResult = loginViewModel.isUserNameValidPublisher
+        loginViewModel.isUserNameValidPublisher
             .sink { result in
                 XCTAssertFalse(result, "User name is valid")
             }
-        getResult.cancel()
+            .store(in: &cancellables)
     }
+    
+    
     
     func testUserNameIsValid(){
         loginViewModel.userName = "kminchelle"
-        let getResult = loginViewModel.isUserNameValidPublisher
+        loginViewModel.isUserNameValidPublisher
             .sink { result in
                 XCTAssertTrue(result, "User name is not valid")
             }
-        getResult.cancel()
+         .store(in: &cancellables)
     }
     
     func testPasswordInvalid(){
         loginViewModel.password = "@34Ts"
-        let getResult = loginViewModel.isPasswordValidPublisher
+        loginViewModel.isPasswordValidPublisher
             .sink { result in
                 XCTAssertFalse(result, "Password is valid")
             }
-        getResult.cancel()
+        .store(in: &cancellables)
     }
     
     func testPasswordValidCheck(){
         loginViewModel.password = "0lelplR"
-        let getResult = loginViewModel.isPasswordValidPublisher
+        loginViewModel.isPasswordValidPublisher
             .sink { result in
                 XCTAssertTrue(result, "Password is not valid")
             }
-        getResult.cancel()
+        .store(in: &cancellables)
     }
     
     

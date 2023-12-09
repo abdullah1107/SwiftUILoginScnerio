@@ -9,15 +9,14 @@ import Foundation
 import Combine
 import SwiftUI
 
-
-
-
-class LoginViewModel: ObservableObject{
-
-    var cancellable: Set<AnyCancellable> = []
 //    @AppStorage("isLoggedIn") var isLoggedIn: Bool = false{
 //        willSet{ objectWillChange.send() }
 //    }
+
+
+class LoginViewModel: ObservableObject, LoginUserProtocol{
+
+    var cancellable: Set<AnyCancellable> = []
     var success:Bool = false
     @Published var userName:String = ""
     @Published var password:String = ""
@@ -87,6 +86,19 @@ class LoginViewModel: ObservableObject{
     }
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

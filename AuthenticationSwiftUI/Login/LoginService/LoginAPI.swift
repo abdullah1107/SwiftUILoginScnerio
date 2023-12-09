@@ -10,7 +10,7 @@ import Combine
 
 
 protocol LoginUserProtocol{
-    func creareNewUserStatus(userName: String?, password: String?, completion: @escaping(Bool)->Void)
+    func creareNewUserStatus(username: String?, password: String?, completion: @escaping (Result<Bool, Error>) -> Void)
 }
 
 enum LoginAPI: String{
