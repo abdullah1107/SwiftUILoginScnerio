@@ -10,10 +10,15 @@ import Combine
 import SwiftUI
 
 
-class LoginViewModel: ObservableObject, LoginUserProtocol{
-    
+
+
+class LoginViewModel: ObservableObject{
+
     var cancellable: Set<AnyCancellable> = []
-    @AppStorage("isLoggedIn") var isLoggedIn: Bool = false
+//    @AppStorage("isLoggedIn") var isLoggedIn: Bool = false{
+//        willSet{ objectWillChange.send() }
+//    }
+    var success:Bool = false
     @Published var userName:String = ""
     @Published var password:String = ""
     @Published var formIsValid = false
@@ -22,22 +27,28 @@ class LoginViewModel: ObservableObject, LoginUserProtocol{
         self.chekLoginFormVilidity()
     }
     
-    func creareNewUserStatus(userName: String?, password: String?) -> Bool {
-        let user = LoginUser(userName: "kminchelle", password: "0lelplR")
+    func creareNewUserStatus(username: String?, password: String?, completion: @escaping (Result<Bool, Error>) -> Void){
+        guard let username = username, !username.isEmpty,
+              let password = password, !password.isEmpty else {
+            completion(.failure(LoginError.invalidInput))
+            return
+        }
+        //let user = LoginUser(userName: "kminchelle", password: "0lelplR")
+        let user = LoginUser(userName: username, password: password)
         LoginNetworkService.createUser(urlPath: LoginAPI.getLoginRequestUrl, user: user, responseType: LoginAPI.ReturnType.self)
-            .sink(receiveCompletion: { completion in
-                switch completion {
+            .sink(receiveCompletion: { result in
+                switch result {
                 case .finished:
                     break
                 case .failure(let error):
                     print("Error: \(error.localizedDescription)")
+                    completion(.failure(LoginError.networkError))
                 }
-            }, receiveValue: { [weak self] responseObject in
-                self?.isLoggedIn = true
+            }, receiveValue: { [weak self] _ in
+                self?.success = true
+                completion(.success(true))
             })
             .store(in: &cancellable)
-        
-        return isLoggedIn
     }
     
     
@@ -73,10 +84,6 @@ class LoginViewModel: ObservableObject, LoginUserProtocol{
             return isNameValid && isPasswordValid
         }
         .eraseToAnyPublisher()
-    }
-    
-    private func isValidLogin(username: String, password: String) -> Bool {
-        return !username.isEmpty && !password.isEmpty
     }
     
 }

@@ -10,7 +10,7 @@ import Combine
 
 
 protocol LoginUserProtocol{
-    func creareNewUserStatus(userName: String?, password: String?) -> Bool
+    func creareNewUserStatus(userName: String?, password: String?, completion: @escaping(Bool)->Void)
 }
 
 enum LoginAPI: String{
@@ -28,7 +28,11 @@ extension LoginAPI{
     }
 }
 
-
+// Enum for more specific error types
+enum LoginError: Error {
+    case invalidInput
+    case networkError
+}
 
 
 

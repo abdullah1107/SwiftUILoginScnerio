@@ -9,19 +9,44 @@ import SwiftUI
 
 struct LoginView: View {
     @StateObject private var loginViewModel: LoginViewModel = LoginViewModel()
+    @State private var userName = ""
+    @State private var password = ""
+//    let getResult:Bool = loginViewModel
+//        .creareNewUserStatus(userName: "kminchelle",
+//                             password: "0lelplR")
+    @Binding var isLoggedIn: Bool
     var body: some View {
         ZStack {
             VStack {
                 LoginLabelText()
                 UserImage()
-                UsernameTextField(username: $loginViewModel.userName)
-                PasswordSecureField(password: $loginViewModel.password)
+                UsernameTextField(username: $userName)
+                PasswordSecureField(password: $password)
                 
-                Button(action: {
-                  _ = loginViewModel.creareNewUserStatus(userName: loginViewModel.userName, password: loginViewModel.password)
-                })
-                {
-                    LoginButtonContent(loginViewModel: loginViewModel)
+//                Button(action: {
+//                    //print("dsagfa", $userName.wrappedValue)
+//                    let result:Bool = loginViewModel.creareNewUserStatus(userName: $userName.wrappedValue, password: $password.wrappedValue)
+//                    isLoggedIn = result
+//                    print(result,isLoggedIn)
+//                })
+//                {
+//                    LoginButtonContent(loginViewModel: loginViewModel)
+//                }
+                
+                Button("Login") {
+                    loginViewModel.creareNewUserStatus(username: $userName.wrappedValue, password: $password.wrappedValue){ result in
+                        
+                        switch result {
+                        case .success(let success):
+                            isLoggedIn = true
+                            print(success)
+                            
+                        case .failure(let failure):
+                            isLoggedIn = false
+                            print(failure.localizedDescription)
+                        }
+                        
+                    }
                 }
                 
                 .onAppear{
@@ -40,7 +65,7 @@ struct LoginView: View {
 
 
 #Preview {
-    LoginView()
+    LoginView(isLoggedIn: .constant(false))
 }
 
 
@@ -77,8 +102,8 @@ struct LoginButtonContent: View {
             .frame(width: 250, height: 55)
             .cornerRadius(35.0)
             .background(Color.green)
-            .opacity(buttonOpacity)
-            .disabled(!loginViewModel.formIsValid)
+            //.opacity(buttonOpacity)
+            //.disabled(!loginViewModel.formIsValid)
     }
     
     var buttonOpacity: Double {

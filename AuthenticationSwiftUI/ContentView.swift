@@ -23,7 +23,7 @@ struct ContentView: View {
                 if isLoggedIn{
                     HomeView()
                 }else{
-                    LoginView()
+                    LoginView(isLoggedIn: $isLoggedIn)
                 }
             }
         }
