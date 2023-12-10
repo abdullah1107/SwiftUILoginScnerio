@@ -21,7 +21,7 @@ struct LoginNetworkService{
             let jsonData = try jsonEncoder.encode(user)
             request.httpBody = jsonData
         }catch{
-            return Fail(error: NetworkError.invalidResponse).eraseToAnyPublisher()
+            return Fail(error: NetworkError.encodeFailed).eraseToAnyPublisher()
         }
         
         return URLSession.shared.dataTaskPublisher(for: request)

@@ -14,9 +14,14 @@
 		B45A89A62B0ADCB8006FC2F1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45A89A52B0ADCB8006FC2F1 /* ContentView.swift */; };
 		B45A89A82B0ADCBB006FC2F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B45A89A72B0ADCBB006FC2F1 /* Assets.xcassets */; };
 		B45A89AB2B0ADCBB006FC2F1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B45A89AA2B0ADCBB006FC2F1 /* Preview Assets.xcassets */; };
-		B45A89B52B0ADCBB006FC2F1 /* AuthenticationSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45A89B42B0ADCBB006FC2F1 /* AuthenticationSwiftUITests.swift */; };
-		B45A89BF2B0ADCBB006FC2F1 /* AuthenticationSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45A89BE2B0ADCBB006FC2F1 /* AuthenticationSwiftUIUITests.swift */; };
 		B45A89C12B0ADCBB006FC2F1 /* AuthenticationSwiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45A89C02B0ADCBB006FC2F1 /* AuthenticationSwiftUIUITestsLaunchTests.swift */; };
+		B49DFF1A2B2445F9000FB134 /* LoginTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49DFF192B2445F9000FB134 /* LoginTest.swift */; };
+		B49DFF1C2B244617000FB134 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49DFF1B2B244617000FB134 /* LoginScreen.swift */; };
+		B49DFF1E2B24462B000FB134 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49DFF1D2B24462B000FB134 /* Login.swift */; };
+		B4A11F912B24CEE300FD43CC /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A11F902B24CEE300FD43CC /* Screen.swift */; };
+		B4A11F932B24DE7400FD43CC /* BaseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A11F922B24DE7400FD43CC /* BaseTestCase.swift */; };
+		B4A11F952B24E9CB00FD43CC /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A11F942B24E9CB00FD43CC /* Keyboard.swift */; };
+		B4A11F992B25431600FD43CC /* SimpleToast in Frameworks */ = {isa = PBXBuildFile; productRef = B4A11F982B25431600FD43CC /* SimpleToast */; };
 		B4C1858D2B22BA8900FB2960 /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C1858C2B22BA8900FB2960 /* LoginTests.swift */; };
 		B4CFC66E2B0B1F1800C56712 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CFC66D2B0B1F1800C56712 /* SplashView.swift */; };
 		B4CFC6712B0B207900C56712 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CFC6702B0B207900C56712 /* LoginView.swift */; };
@@ -56,10 +61,14 @@
 		B45A89A72B0ADCBB006FC2F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B45A89AA2B0ADCBB006FC2F1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B45A89B02B0ADCBB006FC2F1 /* AuthenticationSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AuthenticationSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B45A89B42B0ADCBB006FC2F1 /* AuthenticationSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationSwiftUITests.swift; sourceTree = "<group>"; };
 		B45A89BA2B0ADCBB006FC2F1 /* AuthenticationSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AuthenticationSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B45A89BE2B0ADCBB006FC2F1 /* AuthenticationSwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationSwiftUIUITests.swift; sourceTree = "<group>"; };
 		B45A89C02B0ADCBB006FC2F1 /* AuthenticationSwiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationSwiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B49DFF192B2445F9000FB134 /* LoginTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTest.swift; sourceTree = "<group>"; };
+		B49DFF1B2B244617000FB134 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		B49DFF1D2B24462B000FB134 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		B4A11F902B24CEE300FD43CC /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
+		B4A11F922B24DE7400FD43CC /* BaseTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTestCase.swift; sourceTree = "<group>"; };
+		B4A11F942B24E9CB00FD43CC /* Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		B4C1858C2B22BA8900FB2960 /* LoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
 		B4CFC66D2B0B1F1800C56712 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		B4CFC6702B0B207900C56712 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -77,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4A11F992B25431600FD43CC /* SimpleToast in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,8 +163,7 @@
 		B45A89B32B0ADCBB006FC2F1 /* AuthenticationSwiftUITests */ = {
 			isa = PBXGroup;
 			children = (
-				B45A89B42B0ADCBB006FC2F1 /* AuthenticationSwiftUITests.swift */,
-				B4C1858C2B22BA8900FB2960 /* LoginTests.swift */,
+				B4A11F962B24F7CF00FD43CC /* Login */,
 			);
 			path = AuthenticationSwiftUITests;
 			sourceTree = "<group>";
@@ -162,10 +171,39 @@
 		B45A89BD2B0ADCBB006FC2F1 /* AuthenticationSwiftUIUITests */ = {
 			isa = PBXGroup;
 			children = (
-				B45A89BE2B0ADCBB006FC2F1 /* AuthenticationSwiftUIUITests.swift */,
-				B45A89C02B0ADCBB006FC2F1 /* AuthenticationSwiftUIUITestsLaunchTests.swift */,
+				B49DFF182B244538000FB134 /* XCUITest+Extensions */,
+				B49DFF172B24452D000FB134 /* LoginUITest */,
 			);
 			path = AuthenticationSwiftUIUITests;
+			sourceTree = "<group>";
+		};
+		B49DFF172B24452D000FB134 /* LoginUITest */ = {
+			isa = PBXGroup;
+			children = (
+				B49DFF1D2B24462B000FB134 /* Login.swift */,
+				B49DFF1B2B244617000FB134 /* LoginScreen.swift */,
+				B49DFF192B2445F9000FB134 /* LoginTest.swift */,
+			);
+			path = LoginUITest;
+			sourceTree = "<group>";
+		};
+		B49DFF182B244538000FB134 /* XCUITest+Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B45A89C02B0ADCBB006FC2F1 /* AuthenticationSwiftUIUITestsLaunchTests.swift */,
+				B4A11F942B24E9CB00FD43CC /* Keyboard.swift */,
+				B4A11F902B24CEE300FD43CC /* Screen.swift */,
+				B4A11F922B24DE7400FD43CC /* BaseTestCase.swift */,
+			);
+			path = "XCUITest+Extensions";
+			sourceTree = "<group>";
+		};
+		B4A11F962B24F7CF00FD43CC /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				B4C1858C2B22BA8900FB2960 /* LoginTests.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		B4CFC66F2B0B206000C56712 /* Login */ = {
@@ -262,6 +300,9 @@
 			dependencies = (
 			);
 			name = AuthenticationSwiftUI;
+			packageProductDependencies = (
+				B4A11F982B25431600FD43CC /* SimpleToast */,
+			);
 			productName = AuthenticationSwiftUI;
 			productReference = B45A89A02B0ADCB8006FC2F1 /* AuthenticationSwiftUI.app */;
 			productType = "com.apple.product-type.application";
@@ -334,6 +375,9 @@
 				Base,
 			);
 			mainGroup = B45A89972B0ADCB8006FC2F1;
+			packageReferences = (
+				B4A11F972B25431500FD43CC /* XCRemoteSwiftPackageReference "SimpleToast" */,
+			);
 			productRefGroup = B45A89A12B0ADCB8006FC2F1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -397,7 +441,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B45A89B52B0ADCBB006FC2F1 /* AuthenticationSwiftUITests.swift in Sources */,
 				B4C1858D2B22BA8900FB2960 /* LoginTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -406,8 +449,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B49DFF1A2B2445F9000FB134 /* LoginTest.swift in Sources */,
+				B49DFF1E2B24462B000FB134 /* Login.swift in Sources */,
+				B4A11F952B24E9CB00FD43CC /* Keyboard.swift in Sources */,
+				B49DFF1C2B244617000FB134 /* LoginScreen.swift in Sources */,
+				B4A11F932B24DE7400FD43CC /* BaseTestCase.swift in Sources */,
 				B45A89C12B0ADCBB006FC2F1 /* AuthenticationSwiftUIUITestsLaunchTests.swift in Sources */,
-				B45A89BF2B0ADCBB006FC2F1 /* AuthenticationSwiftUIUITests.swift in Sources */,
+				B4A11F912B24CEE300FD43CC /* Screen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -722,6 +770,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B4A11F972B25431500FD43CC /* XCRemoteSwiftPackageReference "SimpleToast" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sanzaru/SimpleToast";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.8.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B4A11F982B25431600FD43CC /* SimpleToast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B4A11F972B25431500FD43CC /* XCRemoteSwiftPackageReference "SimpleToast" */;
+			productName = SimpleToast;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B45A89982B0ADCB8006FC2F1 /* Project object */;
 }

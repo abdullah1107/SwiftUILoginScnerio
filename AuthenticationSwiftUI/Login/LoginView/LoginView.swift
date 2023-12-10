@@ -8,12 +8,26 @@
 
 import Foundation
 import SwiftUI
+import SimpleToast
+
+
+enum LoginScnerioAlert: String{
+    case successLoginAlert = "You are now Successfully Login"
+    case failedLoginAlert = "Please check your credentials and try again"
+}
 
 struct LoginView: View {
     
     @Binding var isLoggedIn: Bool
     @StateObject private var loginViewModel: LoginViewModel = LoginViewModel()
     @State private var isLoading = false
+    @State var showToast: Bool = false
+    
+    private let toastOptions = SimpleToastOptions(
+        hideAfter: 5
+    )
+    
+    
     
     var body: some View {
         ZStack {
@@ -33,10 +47,11 @@ struct LoginView: View {
                         switch result {
                         case .success(let success):
                             isLoggedIn = success
-                            
                         case .failure:
                             isLoggedIn = false
-                            print(LoginError.networkError)
+                            withAnimation {
+                                showToast.toggle()
+                            }
                         }
                         isLoading = false
                     }
@@ -52,6 +67,17 @@ struct LoginView: View {
                 
                 
             }.padding()
+            
+                .simpleToast(isPresented: $showToast, options: toastOptions) {
+                    
+                    Label(LoginScnerioAlert.failedLoginAlert.rawValue, systemImage: "exclamationmark.triangle")
+                        .padding()
+                        .background(Color.gray.opacity(0.8))
+                        .foregroundColor(Color.red)
+                        .cornerRadius(10)
+                        .padding(.top)
+                        .accessibilityIdentifier("loginFailedToast")
+                }
         }
     }
 }
@@ -64,7 +90,7 @@ struct LoginView: View {
 
 struct LoginLabelText: View {
     var body: some View {
-        Text("Hello")
+        Text("Login User")
             .font(.largeTitle)
             .foregroundColor(.green)
             .fontWeight(.semibold)
@@ -129,4 +155,3 @@ struct PasswordSecureField: View {
             .padding(.bottom, 30)
     }
 }
-
