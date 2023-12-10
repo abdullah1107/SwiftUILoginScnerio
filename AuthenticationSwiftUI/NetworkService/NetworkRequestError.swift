@@ -22,7 +22,7 @@ enum NetworkRequestError: LocalizedError, Equatable {
     case unknownError
 }
 
-enum NetworkError: Error {
+enum NetworkError: Error, Equatable, LocalizedError {
     case invalidURL
     case invalidResponse
     case requestFailed
@@ -30,4 +30,15 @@ enum NetworkError: Error {
     case decodeFailed
     case timeOut
     case unknownError
+    case invalidRequest
+    case badRequest
+    case unauthorized
+    case forbidden
+    case notFound
+    case error4xx(_ code: Int)
+    case serverError
+    case error5xx(_ code: Int)
+    case decodingError( _ description: String)
+    case urlSessionFailed(_ error: URLError)
+ 
 }

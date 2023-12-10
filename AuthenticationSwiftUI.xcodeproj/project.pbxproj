@@ -22,6 +22,10 @@
 		B4A11F932B24DE7400FD43CC /* BaseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A11F922B24DE7400FD43CC /* BaseTestCase.swift */; };
 		B4A11F952B24E9CB00FD43CC /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A11F942B24E9CB00FD43CC /* Keyboard.swift */; };
 		B4A11F992B25431600FD43CC /* SimpleToast in Frameworks */ = {isa = PBXBuildFile; productRef = B4A11F982B25431600FD43CC /* SimpleToast */; };
+		B4A11F9F2B2553D400FD43CC /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A11F9E2B2553D400FD43CC /* HomeScreen.swift */; };
+		B4A11FA12B25541700FD43CC /* HomeDashBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A11FA02B25541700FD43CC /* HomeDashBoard.swift */; };
+		B4A11FA32B25545A00FD43CC /* DashBoardNetworkServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A11FA22B25545A00FD43CC /* DashBoardNetworkServices.swift */; };
+		B4A11FA52B25546F00FD43CC /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A11FA42B25546F00FD43CC /* HomeViewModel.swift */; };
 		B4C1858D2B22BA8900FB2960 /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C1858C2B22BA8900FB2960 /* LoginTests.swift */; };
 		B4CFC66E2B0B1F1800C56712 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CFC66D2B0B1F1800C56712 /* SplashView.swift */; };
 		B4CFC6712B0B207900C56712 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CFC6702B0B207900C56712 /* LoginView.swift */; };
@@ -69,6 +73,10 @@
 		B4A11F902B24CEE300FD43CC /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		B4A11F922B24DE7400FD43CC /* BaseTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTestCase.swift; sourceTree = "<group>"; };
 		B4A11F942B24E9CB00FD43CC /* Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
+		B4A11F9E2B2553D400FD43CC /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		B4A11FA02B25541700FD43CC /* HomeDashBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDashBoard.swift; sourceTree = "<group>"; };
+		B4A11FA22B25545A00FD43CC /* DashBoardNetworkServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardNetworkServices.swift; sourceTree = "<group>"; };
+		B4A11FA42B25546F00FD43CC /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		B4C1858C2B22BA8900FB2960 /* LoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
 		B4CFC66D2B0B1F1800C56712 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		B4CFC6702B0B207900C56712 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -206,6 +214,38 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		B4A11F9A2B25536C00FD43CC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B4A11FA02B25541700FD43CC /* HomeDashBoard.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B4A11F9B2B25538F00FD43CC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B4A11F9E2B2553D400FD43CC /* HomeScreen.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B4A11F9C2B25539A00FD43CC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B4A11FA42B25546F00FD43CC /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B4A11F9D2B2553A600FD43CC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B4A11FA22B25545A00FD43CC /* DashBoardNetworkServices.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		B4CFC66F2B0B206000C56712 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,6 +268,10 @@
 		B4CFC6732B0B20FA00C56712 /* DashBoard */ = {
 			isa = PBXGroup;
 			children = (
+				B4A11F9D2B2553A600FD43CC /* Services */,
+				B4A11F9C2B25539A00FD43CC /* ViewModel */,
+				B4A11F9B2B25538F00FD43CC /* View */,
+				B4A11F9A2B25536C00FD43CC /* Model */,
 			);
 			path = DashBoard;
 			sourceTree = "<group>";
@@ -421,6 +465,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B45A89A62B0ADCB8006FC2F1 /* ContentView.swift in Sources */,
+				B4A11FA52B25546F00FD43CC /* HomeViewModel.swift in Sources */,
 				B4CFC6772B0B222700C56712 /* LoginUser.swift in Sources */,
 				B440DD872B12FFE700692D7D /* APIRequestProtocol.swift in Sources */,
 				B4CFC6832B0B2BEF00C56712 /* Log.swift in Sources */,
@@ -429,11 +474,14 @@
 				B40857F02B16722E008A31D4 /* LoginViewModel.swift in Sources */,
 				B45A89A42B0ADCB8006FC2F1 /* AuthenticationSwiftUIApp.swift in Sources */,
 				B4CFC67E2B0B2AB300C56712 /* APIConstants.swift in Sources */,
+				B4A11FA32B25545A00FD43CC /* DashBoardNetworkServices.swift in Sources */,
 				B4CFC6872B0B361000C56712 /* LoginService.swift in Sources */,
 				B4CFC67C2B0B277A00C56712 /* NetworkRequestError.swift in Sources */,
+				B4A11F9F2B2553D400FD43CC /* HomeScreen.swift in Sources */,
 				B4CFC6712B0B207900C56712 /* LoginView.swift in Sources */,
 				B4CFC66E2B0B1F1800C56712 /* SplashView.swift in Sources */,
 				B4CFC6802B0B2B4F00C56712 /* APIClient.swift in Sources */,
+				B4A11FA12B25541700FD43CC /* HomeDashBoard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,7 +575,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -584,7 +632,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -610,7 +658,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -640,7 +688,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
