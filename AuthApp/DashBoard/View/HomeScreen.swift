@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-
-
 struct HomeScreen: View {
     @AppStorage("showLoginSuccess") var showToast = false
     @ObservedObject var homeViewModel:DashBoadProductViewModel
@@ -49,6 +47,7 @@ struct HomeScreen: View {
                                 }
                             }
                     }
+                    .accessibilityIdentifier("productCellItem")
                 }
                 
                 .onChange(of: searchText) { _ in
@@ -134,7 +133,7 @@ struct ProductItemRow: View {
                     .font(.subheadline)
                     .padding(.leading, 5)
             }
-        }.accessibilityIdentifier("productCellItem")
+        }
         .onAppear {
             if let imageURL = URL(string:product.thumbnail){
                 imageLoader.loadImage(from: imageURL)
