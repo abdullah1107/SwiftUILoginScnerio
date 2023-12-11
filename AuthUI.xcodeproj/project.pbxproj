@@ -10,7 +10,7 @@
 		B40857F02B16722E008A31D4 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40857EF2B16722E008A31D4 /* LoginViewModel.swift */; };
 		B440DD852B12FD9200692D7D /* LoginAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B440DD842B12FD9200692D7D /* LoginAPI.swift */; };
 		B440DD872B12FFE700692D7D /* APIRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B440DD862B12FFE700692D7D /* APIRequestProtocol.swift */; };
-		B45A89A42B0ADCB8006FC2F1 /* AuthenticationSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45A89A32B0ADCB8006FC2F1 /* AuthenticationSwiftUIApp.swift */; };
+		B45A89A42B0ADCB8006FC2F1 /* AuthUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45A89A32B0ADCB8006FC2F1 /* AuthUIApp.swift */; };
 		B45A89A62B0ADCB8006FC2F1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45A89A52B0ADCB8006FC2F1 /* ContentView.swift */; };
 		B45A89A82B0ADCBB006FC2F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B45A89A72B0ADCBB006FC2F1 /* Assets.xcassets */; };
 		B45A89AB2B0ADCBB006FC2F1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B45A89AA2B0ADCBB006FC2F1 /* Preview Assets.xcassets */; };
@@ -63,7 +63,7 @@
 		B440DD842B12FD9200692D7D /* LoginAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAPI.swift; sourceTree = "<group>"; };
 		B440DD862B12FFE700692D7D /* APIRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestProtocol.swift; sourceTree = "<group>"; };
 		B45A89A02B0ADCB8006FC2F1 /* AuthUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuthUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B45A89A32B0ADCB8006FC2F1 /* AuthenticationSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationSwiftUIApp.swift; sourceTree = "<group>"; };
+		B45A89A32B0ADCB8006FC2F1 /* AuthUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUIApp.swift; sourceTree = "<group>"; };
 		B45A89A52B0ADCB8006FC2F1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B45A89A72B0ADCBB006FC2F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B45A89AA2B0ADCBB006FC2F1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -152,16 +152,16 @@
 		B45A89A22B0ADCB8006FC2F1 /* AuthApp */ = {
 			isa = PBXGroup;
 			children = (
-				B4CFC6812B0B2BEF00C56712 /* Utilities */,
-				B4CFC6782B0B26F200C56712 /* NetworkService */,
-				B4CFC6742B0B210500C56712 /* Details */,
-				B4CFC6732B0B20FA00C56712 /* DashBoard */,
-				B4CFC6722B0B20DE00C56712 /* Splash */,
-				B4CFC66F2B0B206000C56712 /* Login */,
-				B45A89A32B0ADCB8006FC2F1 /* AuthenticationSwiftUIApp.swift */,
-				B45A89A52B0ADCB8006FC2F1 /* ContentView.swift */,
 				B45A89A72B0ADCBB006FC2F1 /* Assets.xcassets */,
+				B45A89A32B0ADCB8006FC2F1 /* AuthUIApp.swift */,
+				B45A89A52B0ADCB8006FC2F1 /* ContentView.swift */,
+				B4CFC6732B0B20FA00C56712 /* DashBoard */,
+				B4CFC6742B0B210500C56712 /* Details */,
+				B4CFC66F2B0B206000C56712 /* Login */,
+				B4CFC6782B0B26F200C56712 /* NetworkService */,
 				B45A89A92B0ADCBB006FC2F1 /* Preview Content */,
+				B4CFC6722B0B20DE00C56712 /* Splash */,
+				B4CFC6812B0B2BEF00C56712 /* Utilities */,
 			);
 			path = AuthApp;
 			sourceTree = "<group>";
@@ -186,8 +186,8 @@
 			isa = PBXGroup;
 			children = (
 				B4E1CEA62B2683DF000A29D4 /* DashBoardUITests */,
-				B49DFF182B244538000FB134 /* XCUITest+Extensions */,
 				B49DFF172B24452D000FB134 /* LoginUITest */,
+				B49DFF182B244538000FB134 /* XCUITest+Extensions */,
 			);
 			path = AuthUITests;
 			sourceTree = "<group>";
@@ -489,7 +489,7 @@
 				B4CFC67A2B0B273D00C56712 /* HTTPMethod.swift in Sources */,
 				B440DD852B12FD9200692D7D /* LoginAPI.swift in Sources */,
 				B40857F02B16722E008A31D4 /* LoginViewModel.swift in Sources */,
-				B45A89A42B0ADCB8006FC2F1 /* AuthenticationSwiftUIApp.swift in Sources */,
+				B45A89A42B0ADCB8006FC2F1 /* AuthUIApp.swift in Sources */,
 				B4CFC67E2B0B2AB300C56712 /* APIConstants.swift in Sources */,
 				B4A11FA32B25545A00FD43CC /* DashBoardNetworkServices.swift in Sources */,
 				B4CFC6872B0B361000C56712 /* LoginService.swift in Sources */,
