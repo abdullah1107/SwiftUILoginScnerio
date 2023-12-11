@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct AuthenticationSwiftUIApp: App {
+struct AutheUIApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

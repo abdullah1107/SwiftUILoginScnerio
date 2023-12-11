@@ -17,5 +17,13 @@ final class LoginTest: BaseXCTestSetup {
             .assert(\.loginFailedAlertToast, equals: "Please check your credentials and try again")
     }
 
+    
+    func testLoginWithvalidCredentials() {
+        Login.LoginScreen()
+            .tapUserTextField("kminchelle")
+            .tapPasswordTextField("0lelplR")
+            .tapLoginButtonSuccess()
+            .assertDisplayed(DashBoard.ProductScreen())
+    }
 
 }

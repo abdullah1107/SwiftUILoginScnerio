@@ -58,4 +58,12 @@ extension Login.LoginScreen {
         loginFailedToast.waitUntilDisplayed()
         return loginFailedToast.label
     }
+    
+    @discardableResult
+    func tapLoginButtonSuccess() -> DashBoard.ProductScreen {
+        loginButton.waitUntilDisplayed()
+        loginButton.tap()
+        waitForScreenDisplay(timeout: 2.0)
+        return DashBoard.ProductScreen()
+    }
 }

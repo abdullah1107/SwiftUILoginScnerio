@@ -7,7 +7,7 @@
 
 import XCTest
 import Combine
-@testable import AuthenticationSwiftUI
+@testable import AuthUI
 
 final class LoginTests: XCTestCase {
 

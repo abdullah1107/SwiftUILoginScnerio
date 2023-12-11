@@ -31,12 +31,13 @@ struct HomeScreen: View {
 
     
     var body: some View {
-        VStack{
-            if !showToast{
-                CustomToastView(message: LoginScnerioAlert.successLoginAlert.rawValue)
-                    .transition(.move(edge: .top))
-            }
+        
+        if !showToast{
+            LoginSuccessToastView(message: LoginScnerioAlert.successLoginAlert.rawValue, success: $showToast)
+                .transition(.move(edge: .top))
+                .accessibilityIdentifier("loginSuccessAlert")
         }
+        
         NavigationView{
             VStack{
                 List(filteredProducts) { product in
@@ -51,24 +52,29 @@ struct HomeScreen: View {
                 }
                 
                 .onChange(of: searchText) { _ in
+                    debugPrint("searchText", searchText)
                 }
                 
                 .onAppear {
-                    presentToastIfNeeded()
+                    checkToast()
                 }
                 .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search Product")
+                .accessibilityIdentifier("searchProductIdentifier")
                 .navigationTitle("DashBoard")
                 .navigationBarTitleDisplayMode(.large)
             }
         }
     }
-    private func presentToastIfNeeded() {
-        if !showToast {
-            withAnimation {
-                showToast = true
-            }
+    
+    private func checkToast(){
+        if !showToast{
+            showToast.toggle()
+            showToast = true
         }
+        
+        
     }
+
 }
 
 #Preview {
@@ -76,8 +82,9 @@ struct HomeScreen: View {
 }
 
 
-struct CustomToastView: View {
+struct LoginSuccessToastView: View {
     let message: String
+    @Binding var success:Bool
     
     var body: some View {
         VStack{
@@ -91,7 +98,9 @@ struct CustomToastView: View {
             .foregroundColor(Color.white)
             .cornerRadius(10)
             .padding(.top)
-            .accessibilityIdentifier("loginSuccessToast")
+            .onAppear{
+                success = false
+            }
         }
     }
 }
@@ -114,7 +123,7 @@ struct ProductItemRow: View {
                     .scaledToFit()
                     .frame(width: 80, height: 80)
             } else {
-                Text("Image Loading...")
+                Text("Loading...")
             }
             
             VStack(alignment: .leading) {
@@ -125,7 +134,7 @@ struct ProductItemRow: View {
                     .font(.subheadline)
                     .padding(.leading, 5)
             }
-        }
+        }.accessibilityIdentifier("productCellItem")
         .onAppear {
             if let imageURL = URL(string:product.thumbnail){
                 imageLoader.loadImage(from: imageURL)

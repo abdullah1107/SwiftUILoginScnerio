@@ -7,7 +7,7 @@
 
 import XCTest
 
-//final class AuthenticationSwiftUIUITestsLaunchTests: XCTestCase {
+//final class AuthUITestsLaunchTests: XCTestCase {
 //
 //    override class var runsForEachTargetApplicationUIConfiguration: Bool {
 //        true
