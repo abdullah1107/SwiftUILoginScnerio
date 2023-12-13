@@ -27,3 +27,12 @@ final class LoginTest: BaseXCTestSetup {
     }
 
 }
+
+
+//0  0  0 = 6
+//1  1  1 = 6
+//2 + 2 + 2 = 6
+//3 * 3 - 3 = 6
+// sqrt(4)+sqrt(4)+sqrt(4)  = 6
+//(5-5)! +  5 = 6
+// 7 7 7

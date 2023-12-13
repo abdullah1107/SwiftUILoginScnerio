@@ -30,33 +30,30 @@ struct HomeScreen: View {
     
     var body: some View {
         
-        if !showToast{
-            LoginSuccessToastView(message: LoginScnerioAlert.successLoginAlert.rawValue, success: $showToast)
-                .transition(.move(edge: .top))
-                .accessibilityIdentifier("loginSuccessAlert")
-        }
+//        if !showToast{
+//            LoginSuccessToastView(message: LoginScnerioAlert.successLoginAlert.rawValue, success: $showToast)
+//                .transition(.move(edge: .top))
+//                .accessibilityIdentifier("loginSuccessAlert")
+//        }
         
         NavigationView{
             VStack{
                 List(filteredProducts) { product in
-                    NavigationLink(destination: ProductDetail(product: product)) {
+                    NavigationLink(destination: ProductDetails(product: product)) {
                         ProductItemRow(product: product)
                             .onAppear {
                                 if product.id == homeViewModel.products.last?.id {
                                     homeViewModel.getAllProducts()
                                 }
                             }
+                            .accessibility(identifier: "productCellItem_\(product.id)")
                     }
-                    .accessibilityIdentifier("productCellItem")
                 }
                 
                 .onChange(of: searchText) { _ in
                     debugPrint("searchText", searchText)
                 }
                 
-                .onAppear {
-                    checkToast()
-                }
                 .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search Product")
                 .accessibilityIdentifier("searchProductIdentifier")
                 .navigationTitle("DashBoard")
@@ -64,44 +61,11 @@ struct HomeScreen: View {
             }
         }
     }
-    
-    private func checkToast(){
-        if !showToast{
-            showToast.toggle()
-            showToast = true
-        }
-        
-        
-    }
 
 }
 
 #Preview {
     HomeScreen()
-}
-
-
-struct LoginSuccessToastView: View {
-    let message: String
-    @Binding var success:Bool
-    
-    var body: some View {
-        VStack{
-            Label {
-                Text(message)
-            } icon: {
-                Image(systemName: "checkmark")
-            }
-            .padding()
-            .background(Color.green.opacity(0.8))
-            .foregroundColor(Color.white)
-            .cornerRadius(10)
-            .padding(.top)
-            .onAppear{
-                success = false
-            }
-        }
-    }
 }
 
 
@@ -149,12 +113,38 @@ struct ProductItemRow: View {
 
 
 
-struct ProductDetail: View{
+//struct ProductDetail: View{
+//    
+//    var product: Product
+//
+//    var body: some View {
+//        Text("Product Detail: \(product.description)")
+//    }
+//
+//}
+
+
+
+// MARK: - ToastScreen
+struct LoginSuccessToastView: View {
+    let message: String
+    @Binding var success:Bool
     
-    var product: Product
-
     var body: some View {
-        Text("Product Detail: \(product.description)")
+        VStack{
+            Label {
+                Text(message)
+            } icon: {
+                Image(systemName: "checkmark")
+            }
+            .padding()
+            .background(Color.green.opacity(0.8))
+            .foregroundColor(Color.white)
+            .cornerRadius(10)
+            .padding(.top)
+            .onAppear{
+                success = false
+            }
+        }
     }
-
 }
